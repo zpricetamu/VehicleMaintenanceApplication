@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/clear_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/clouds_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/drizzle_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/mist_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/rainy_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/snow_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/drawable-hdpi/thunderstrom_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/car_select.xml" value="0.25" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/carmake.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/carmodel.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/fragment_home2.xml" value="0.3625" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/fragment_maintenance.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/fragment_weather.xml" value="0.33" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/maintenance_frag.xml" value="0.25" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/nav_header.xml" value="0.5" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/sign_in_activity.xml" value="0.33" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/signup_activity.xml" value="0.25" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/layout/weather.xml" value="0.33" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/menu/nav_menu.xml" value="0.33" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.343" />
+        <entry key="..\:/Users/Zach/AndroidStudioProjects/VehicleMaintenanceApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
