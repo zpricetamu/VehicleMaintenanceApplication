@@ -1,6 +1,7 @@
-package com.example.vehiclemaintenanceapplication.Utilities
+package com.example.vehiclemaintenanceapplication.WeatherCode.Utilities
 
-import com.example.vehiclemaintenanceapplication.POJO.ModelClass
+import com.example.vehiclemaintenanceapplication.Backend.CarDataGet
+import com.example.vehiclemaintenanceapplication.WeatherCode.POJO.ModelClass
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,5 +20,6 @@ interface Apiinterface {
     @Query("q") cityName:String,
     @Query("APPID") api_key:String
     ):Call<ModelClass>
+
 
 }

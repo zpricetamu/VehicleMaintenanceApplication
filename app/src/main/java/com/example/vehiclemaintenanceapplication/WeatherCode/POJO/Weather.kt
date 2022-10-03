@@ -1,4 +1,4 @@
-package com.example.vehiclemaintenanceapplication.POJO
+package com.example.vehiclemaintenanceapplication.WeatherCode.POJO
 
 import com.google.gson.annotations.SerializedName
 //weather data from gson file

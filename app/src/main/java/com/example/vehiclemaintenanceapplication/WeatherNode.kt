@@ -18,8 +18,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import com.example.vehiclemaintenanceapplication.POJO.ModelClass
-import com.example.vehiclemaintenanceapplication.Utilities.ApiUtilities
+import com.example.vehiclemaintenanceapplication.WeatherCode.POJO.ModelClass
+import com.example.vehiclemaintenanceapplication.WeatherCode.Utilities.ApiUtilities
 import com.example.vehiclemaintenanceapplication.databinding.WeatherBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -82,7 +82,7 @@ class WeatherNode : AppCompatActivity() {
             }
         })
     }
-//use user settins to get location, if not available ask
+//use user settings to get location, if not available ask
     private fun getCurrentLocation(){
 
         if(checkPermissions()){
@@ -136,7 +136,7 @@ class WeatherNode : AppCompatActivity() {
         })
 
     }
-//setupt data for views,
+//setup data for views,
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setDataOnViews(body: ModelClass?) {
 
@@ -161,7 +161,7 @@ class WeatherNode : AppCompatActivity() {
         updateUI(body.weather[0].id)
 
     }
-//all of these are based on api where they catagorize weather type based on a number, then assign variables based on number
+//all of these are based on api where they categorize weather type based on a number, then assign variables based on number
     private fun updateUI(id: Int) {
         if(id in 200..232) {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)

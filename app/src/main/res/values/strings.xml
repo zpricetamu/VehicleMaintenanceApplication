@@ -8,9 +8,9 @@
     <string name="demo_date">19 April, 3:11 pm</string>
     <string name="default_numbers">100</string>
     <string name="pressure">Pressure</string>
-    <string name="max_temp">Max Temp.</string>
+    <string name="temp_max">Max Temp.</string>
     <string name="humidity">Humidity</string>
-    <string name="min_temp">Nim Temp.</string>
+    <string name="temp_min">Min Temp.</string>
     <string name="wind_speed">Wind Speed</string>
     <string name="temperature_in_C">Temperature</string>
     <string name="day">Day 17</string>
@@ -20,6 +20,7 @@
     <string name="feels_alike">Feels like</string>
     <string name="sunrise">Sunrise</string>
     <string name="sunset">Sunset</string>
-
+    <string name="name">username</string>
+    <string name="user_email">email</string>
 
 </resources>

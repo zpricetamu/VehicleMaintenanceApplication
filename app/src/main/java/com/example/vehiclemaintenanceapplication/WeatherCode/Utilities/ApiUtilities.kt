@@ -1,4 +1,4 @@
-package com.example.vehiclemaintenanceapplication.Utilities
+package com.example.vehiclemaintenanceapplication.WeatherCode.Utilities
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -7,7 +7,7 @@ object ApiUtilities {
 
     private var retrofit:Retrofit?=null
     var BASE_URL="https://api.openweathermap.org/data/2.5/";
-    fun getApiInterface():Apiinterface? {
+    fun getApiInterface(): Apiinterface? {
         if (retrofit == null) {
             retrofit = Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build()
