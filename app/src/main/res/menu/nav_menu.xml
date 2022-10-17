@@ -25,6 +25,13 @@
         android:id="@+id/nav_Maintenance"
         android:icon="@drawable/ic_baseline_car_repair_24"
         android:title="Maintenance"/>
+
+    <item
+        android:id="@+id/alerts"
+        android:icon="@drawable/ic_action_alert"
+        android:title="Alerts"
+        />
+
         <!--create new group-->
     </group>
     <item android:title="Settings">

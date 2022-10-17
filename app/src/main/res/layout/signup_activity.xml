@@ -107,8 +107,7 @@
             android:text="Register" />
 
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
 
         <!--back to sign in text-->
         <TextView

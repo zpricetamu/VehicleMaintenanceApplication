@@ -20,17 +20,32 @@
             android:layout_height="match_parent"
             android:id="@+id/frameLayout">
             <!--background picture-->
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/cah" />
+
+
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:id="@+id/speedy"
+                android:paddingTop="8dp"
+                android:textSize="20dp"
+                android:text="@string/speed"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/rpm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="@string/rpm"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+
+                />
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

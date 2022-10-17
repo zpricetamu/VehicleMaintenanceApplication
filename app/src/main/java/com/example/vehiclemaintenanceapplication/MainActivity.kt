@@ -76,15 +76,24 @@ class MainActivity : AppCompatActivity() {
             text1.setText(response.name).toString()
             val text2 = findViewById<TextView>(R.id.emin)
             text2.setText(response.user_email).toString()
-            Log.d("Response", response.name.toString())
-
-            Log.d("Response", response.user_password.toString())
-            Log.d("Response", response.user_vehicle_model.toString())
 
 
         })
 
+        viewModel.getData()
+        viewModel.myResponse2.observe(this, Observer { response2 ->
+
+
+            val text3 = findViewById<TextView>(R.id.speedy)
+            text3.setText("Speed: "+response2.speed)
+
+        })
+
     }
+
+
+
+
     //function i made to let me move from menu to fragments
     private fun replaceFragment(fragment: Fragment, title: String){
 

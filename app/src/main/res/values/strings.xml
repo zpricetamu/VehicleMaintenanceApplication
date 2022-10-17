@@ -22,5 +22,16 @@
     <string name="sunset">Sunset</string>
     <string name="name">username</string>
     <string name="user_email">email</string>
+    <string name="speed">speed</string>
+    <string name="rpm">rpm</string>
+
+
+
+    //obd
+    <string name="code">code</string>
+    <string name="descrip">descrip</string>
+    <string name="issues">issues</string>
+    <string name="partname">parts</string>
+    <string name="solution">solution</string>
 
 </resources>
