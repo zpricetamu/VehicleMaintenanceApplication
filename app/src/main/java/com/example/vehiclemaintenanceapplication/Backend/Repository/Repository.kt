@@ -1,10 +1,8 @@
 package com.example.vehiclemaintenanceapplication.Backend.Repository
 
-import com.example.vehiclemaintenanceapplication.Backend.CarDataGet
-import com.example.vehiclemaintenanceapplication.Backend.CarDataPost
-import com.example.vehiclemaintenanceapplication.Backend.OBDGet
-import com.example.vehiclemaintenanceapplication.Backend.RetrofitInstance
+import com.example.vehiclemaintenanceapplication.Backend.*
 import retrofit2.Response
+import retrofit2.http.POST
 
 class Repository {
 
@@ -18,4 +16,9 @@ class Repository {
     suspend fun getObd(): OBDGet {
         return RetrofitInstance.api.getObd()
     }
+
+    suspend fun pushPost(post: CarUserPost): Response<CarUserPost> {
+        return RetrofitInstance.api.pushPost(post)
+    }
+
 }

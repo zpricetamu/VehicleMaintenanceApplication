@@ -12,7 +12,7 @@
     <string name="humidity">Humidity</string>
     <string name="temp_min">Min Temp.</string>
     <string name="wind_speed">Wind Speed</string>
-    <string name="temperature_in_C">Temperature</string>
+    <string name="temperature_in_C">Temperature in C</string>
     <string name="day">Day 17</string>
     <string name="night">Night 9</string>
     <string name="main_temp">75°</string>
@@ -26,12 +26,30 @@
     <string name="rpm">rpm</string>
 
 
-
     //obd
     <string name="code">code</string>
     <string name="descrip">descrip</string>
     <string name="issues">issues</string>
     <string name="partname">parts</string>
     <string name="solution">solution</string>
+
+    //weather
+    <string name="carweathtip1">time to booze-cruise</string>
+    <string name="carweathtip2">You probably actually should not</string>
+    <string name="carweathtip3">but you could</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>

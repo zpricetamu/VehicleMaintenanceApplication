@@ -140,18 +140,18 @@ class WeatherNode : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setDataOnViews(body: ModelClass?) {
 
-        val sdf=SimpleDateFormat("dd/MM/yyyy hh:mm")
+        val sdf=SimpleDateFormat("MM/dd/yyyy hh:mm")
         val currentDate=sdf.format(Date())
         weatherBinding.tvDateAndTime.text=currentDate
 
-        weatherBinding.tvMaxTemp.text="Day "+kelvinToFahrenheit(body!!.main.temp_max) +"°"
-        weatherBinding.tvMinTemp.text="Night "+kelvinToFahrenheit(body!!.main.temp_min) +"°"
-        weatherBinding.tvMinTemp.text=""+kelvinToFahrenheit(body!!.main.temp) +"°"
-        weatherBinding.tvFeelsLike.text="Feels like "+kelvinToFahrenheit(body!!.main.feels_like) +"°"
+        weatherBinding.tvMaxTemp.text="High: "+kelvinToFahrenheit(body!!.main.temp_max) +"°"
+        weatherBinding.tvMinTemp.text="Low: "+kelvinToFahrenheit(body!!.main.temp_min) +"°"
+        weatherBinding.tvTemp.text=""+kelvinToFahrenheit(body!!.main.temp) +"°"
+        weatherBinding.tvFeelsLike.text="Feels like: "+kelvinToFahrenheit(body!!.main.feels_like) +"°"
         weatherBinding.tvWeatherType.text=body.weather[0].main
         weatherBinding.tvSunrise.text=timeStampToLocalDate(body.sys.sunrise.toLong())
         weatherBinding.tvSunset.text=timeStampToLocalDate(body.sys.sunset.toLong())
-        weatherBinding.tvPressure.text=body.main.pressure.toString()
+        weatherBinding.tvPressure.text=pressureconverter(body.main.pressure).toString()
         weatherBinding.tvHumidity.text=body.main.humidity.toString()+" %"
         weatherBinding.tvWindSpeed.text=body.wind.speed.toString()+" m/s"
 
@@ -176,6 +176,9 @@ class WeatherNode : AppCompatActivity() {
                 ContextCompat.getDrawable(this@WeatherNode, R.drawable.thunderstorm_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.thunderstorm_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.thunderstorm)
+            weatherBinding.cartip1.text="Make sure to check your tire treads"
+            weatherBinding.cartip2.text="Make sure to inspect the seals around your vehicle"
+            weatherBinding.cartip3.text="Ensure your windshield wipers are in good condition"
         }else if (id in 300..321){
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -186,6 +189,10 @@ class WeatherNode : AppCompatActivity() {
             weatherBinding.llMainBgAbove.background=ContextCompat.getDrawable(this@WeatherNode,R.drawable.drizzle_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.drizzle_bg)
             weatherBinding.ivWeatherIcon.setImageResource(R.drawable.drizzle)
+            weatherBinding.cartip1.text="Make sure to check your tire treads"
+            weatherBinding.cartip2.text="Make sure to inspect the seals around your vehicle"
+            weatherBinding.cartip3.text="Ensure your windshield wipers are in good condition"
+
 
         }else if(id in 500..531){
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
@@ -197,6 +204,9 @@ class WeatherNode : AppCompatActivity() {
             weatherBinding.llMainBgAbove.background = ContextCompat.getDrawable(this@WeatherNode,R.drawable.rainy_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.rainy_bg)
             weatherBinding.ivWeatherIcon.setImageResource(R.drawable.rain)
+            weatherBinding.cartip1.text="Make sure to check your tire treads"
+            weatherBinding.cartip2.text="Make sure to inspect the seals around your vehicle"
+            weatherBinding.cartip3.text="Ensure your windshield wipers are in good condition"
         }else if(id in 600..620){
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -207,6 +217,9 @@ class WeatherNode : AppCompatActivity() {
             weatherBinding.llMainBgAbove.background = ContextCompat.getDrawable(this@WeatherNode,R.drawable.snow_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.snow_bg)
             weatherBinding.ivWeatherIcon.setImageResource(R.drawable.snow)
+            weatherBinding.cartip1.text="Be sure to mount winte rtires"
+            weatherBinding.cartip2.text="Have winter wipers installed"
+            weatherBinding.cartip3.text="Make sure your car is serviced for winter conditions"
         }else if(id in 701..781){
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -217,6 +230,9 @@ class WeatherNode : AppCompatActivity() {
             weatherBinding.llMainBgAbove.background = ContextCompat.getDrawable(this@WeatherNode,R.drawable.mist_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.mist_bg)
             weatherBinding.ivWeatherIcon.setImageResource(R.drawable.mist)
+            weatherBinding.cartip1.text="Be sure to use your low beams"
+            weatherBinding.cartip2.text="Consider rolling down your windows "
+            weatherBinding.cartip3.text="Increase your following distance to ensure proper response time"
         }else if(id == 800){
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -227,6 +243,9 @@ class WeatherNode : AppCompatActivity() {
             weatherBinding.llMainBgAbove.background = ContextCompat.getDrawable(this@WeatherNode,R.drawable.clear_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.clear_bg)
             weatherBinding.ivWeatherIcon.setImageResource(R.drawable.clear)
+            weatherBinding.cartip1.text="Make sure all your fluids are topped off"
+            weatherBinding.cartip2.text="Be sure to check your tire pressure"
+            weatherBinding.cartip3.text="Make sure your vehicle is inspected to be safe"
         }else{
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -237,6 +256,9 @@ class WeatherNode : AppCompatActivity() {
             weatherBinding.llMainBgAbove.background = ContextCompat.getDrawable(this@WeatherNode,R.drawable.clouds_bg)
             weatherBinding.ivWeatherBg.setImageResource(R.drawable.clouds_bg)
             weatherBinding.ivWeatherIcon.setImageResource(R.drawable.clouds)
+            weatherBinding.cartip1.text="Make sure all your fluids are topped off"
+            weatherBinding.cartip2.text="Be sure to check your tire pressure"
+            weatherBinding.cartip3.text="Make sure your vehicle is inspected to be safe"
         }
         weatherBinding.pbLoading.visibility=View.GONE
         weatherBinding.rlMainLayout.visibility=View.VISIBLE
@@ -260,9 +282,19 @@ class WeatherNode : AppCompatActivity() {
     private fun kelvinToFahrenheit(temp: Double): Double {
         var intTemp = temp
         intTemp = intTemp.minus(273.15)
-        intTemp = intTemp.times(9/5)
+        intTemp = intTemp.times(9)
+        intTemp = intTemp.div(5)
         intTemp = intTemp.plus(32)
         return intTemp.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
+
+    }
+
+    private fun pressureconverter(temp: Int): Double {
+        var intTemp = temp.toDouble()
+
+        intTemp = intTemp.div(33.863886666667)
+
+        return intTemp.toBigDecimal().setScale(2, RoundingMode.UP).toDouble()
 
     }
 //checks phone for location services

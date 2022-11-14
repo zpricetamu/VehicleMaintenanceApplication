@@ -95,7 +95,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/padding_large"
                         android:layout_marginStart="@dimen/padding_x_large"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        >
                         <!--date time text-->
                         <TextView
                             android:layout_width="match_parent"
@@ -196,9 +197,80 @@
 
 
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/caradvice"
+                                android:textColor="@color/white"
+                                android:layout_weight="4"
+                                android:textSize="18dp"
+                                android:text="Maintenance Advice:"
+                                android:gravity="center">
+
+                            </TextView>
+
+
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:layout_marginRight="15dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cartip1"
+                                android:textColor="@color/white"
+                                android:layout_weight="5"
+                                android:textSize="18dp"
+                                android:text="@string/carweathtip1"
+                                android:gravity="center">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cartip2"
+                                android:textColor="@color/white"
+                                android:layout_weight="5"
+                                android:textSize="18dp"
+                                android:text="@string/carweathtip2"
+                                android:gravity="center"
+                                android:layout_marginLeft="2dp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cartip3"
+                                android:textColor="@color/white"
+                                android:layout_weight="5"
+                                android:textSize="18dp"
+                                android:text="@string/carweathtip3"
+                                android:gravity="center"
+                                android:layout_marginLeft="2dp">
+
+                            </TextView>
+
+                        </LinearLayout>
 
                     </LinearLayout>
+
+
 
 
                 </FrameLayout>

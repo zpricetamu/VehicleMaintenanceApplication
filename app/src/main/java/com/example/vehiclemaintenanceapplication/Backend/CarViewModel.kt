@@ -5,12 +5,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.vehiclemaintenanceapplication.Backend.Repository.Repository
 import kotlinx.coroutines.launch
+import retrofit2.Response
+import retrofit2.http.POST
 
 class CarViewModel(private val repository: Repository): ViewModel() {
 
     val myResponse: MutableLiveData<CarDataPost> = MutableLiveData()
     val myResponse2: MutableLiveData<CarDataGet> = MutableLiveData()
     val myResponse3: MutableLiveData<OBDGet> = MutableLiveData()
+    val myResponse4: MutableLiveData<Response<CarUserPost>> = MutableLiveData()
+
 
     fun getPost() {
         viewModelScope.launch {
@@ -34,5 +38,13 @@ class CarViewModel(private val repository: Repository): ViewModel() {
 
         }
     }
+
+    fun pushPost(post: CarUserPost) {
+        viewModelScope.launch {
+            val response4 = repository.pushPost(post)
+            myResponse4.value = response4
+        }
+    }
+
 
 }

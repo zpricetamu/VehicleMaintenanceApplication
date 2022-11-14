@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -18,112 +22,114 @@
 
 
 
-        <!--first line of text-->
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/obdcode"
+          android:text="OBD CODE: P0420"
+          android:textSize="48dp"
+          android:gravity="center"
+          android:paddingTop="100dp"
+          android:textStyle="bold"
+          >
+
+      </TextView>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:weightSum="2">
-
-
+            android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Weather: Cloudy"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:id="@+id/maintenancetipuno"
+                android:text="Description: Problem in catalytic converter"
+                android:paddingTop="20dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                >
 
+
+            </TextView>
 
 
         </LinearLayout>
-        <!--second line of text-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:weightSum="2">
-
-
+            android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/textVie4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:singleLine="true"
-                android:text="Weather Tip: be careful driving while roads are slick"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:id="@+id/problems"
+                android:text="Possible Issues:"
+                android:textStyle="bold"
+                android:paddingTop="20dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                >
 
+
+            </TextView>
 
 
         </LinearLayout>
-        <!--third line of text-->
         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:weightSum="2">
+            android:id="@+id/problems1"
+            android:text="Exhaust pipe damage, failing catalytic converter, failing oxygen senor"
+
+            android:paddingTop="10dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            >
 
 
-            <TextView
-                android:id="@+id/textVie6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:singleLine="true"
-                android:text="Check Engine Light: On "
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TextView>
 
-
-
-        </LinearLayout>
-        <!--fourth line of text-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:weightSum="2">
-
-
-            <TextView
-                android:id="@+id/textVie7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:singleLine="true"
-                android:text="Engine light cause: High coolant temp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-
-
-        </LinearLayout>
-        <!--fifth line of text-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:weightSum="2">
-
-
-            <TextView
-                android:id="@+id/textVie8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:singleLine="true"
-                android:text="Trouble Codes Maintenance:  None"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-
-
-        </LinearLayout>
 
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/solution"
+                android:text="Possible Solutions:"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                >
+
+
+            </TextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/solution1"
+                android:text="Replace exhaust pipes, replace catalytic converter, replace oxygen sensor"
+
+                android:paddingTop="10dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                >
+
+
+            </TextView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
     <!--general layout-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -135,5 +141,20 @@
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="212dp"
+        android:layout_height="195dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="462dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="74dp"
+        android:background="@drawable/warning" />
+
 
 </RelativeLayout>

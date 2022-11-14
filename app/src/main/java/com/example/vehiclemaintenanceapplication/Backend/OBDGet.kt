@@ -8,6 +8,6 @@ data class OBDGet (
     @SerializedName("description") val descrip : String,
     @SerializedName("issues") val issues : String,
     @SerializedName("name") val partname : String,
-    @SerializedName("solutions") val solution : String
+    @SerializedName("solutions") val solution : String,
 
         )
