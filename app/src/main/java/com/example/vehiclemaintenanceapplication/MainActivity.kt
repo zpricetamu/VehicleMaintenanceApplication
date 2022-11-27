@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> startActivity(Intent(this, MainActivity::class.java))
                 R.id.nav_logout -> firebaseAuth.signOut()
                 R.id.nav_weather -> startActivity(Intent(this, WeatherNode::class.java))
+                R.id.alerts -> startActivity(Intent(this, Alerts::class.java))
                 R.id.nav_Maintenance -> replaceFragment(Maintenance(), it.title.toString())
                 R.id.nav_settings -> replaceFragment(settingsFragment(), it.title.toString())
             }
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = CarViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
 
-        viewModel.getPost()
+        viewModel.getPost(SignInActivity.passthrow.pass)
         viewModel.myResponse.observe(this, Observer { response ->
 
 
@@ -125,7 +126,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Main", response4.message())
             }
         })
-        */
+*/
 
 
 

@@ -16,9 +16,9 @@ class CarViewModel(private val repository: Repository): ViewModel() {
     val myResponse4: MutableLiveData<Response<CarUserPost>> = MutableLiveData()
 
 
-    fun getPost() {
+    fun getPost(passw: String) {
         viewModelScope.launch {
-            val response: CarDataPost = repository.getPost()
+            val response: CarDataPost = repository.getPost(passw)
             myResponse.value=response
         }
     }

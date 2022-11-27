@@ -6,8 +6,8 @@ import retrofit2.http.POST
 
 class Repository {
 
-    suspend fun getPost(): CarDataPost {
-        return RetrofitInstance.api.getPost()
+    suspend fun getPost(passw: String): CarDataPost {
+        return RetrofitInstance.api.getPost(passw)
     }
 
     suspend fun getData(): CarDataGet {

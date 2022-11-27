@@ -28,6 +28,11 @@
             android:exported="true">
 
         </activity>
+        <activity
+            android:name=".Alerts"
+            android:exported="true">
+
+        </activity>
 
         <activity
             android:name=".SignInActivity"

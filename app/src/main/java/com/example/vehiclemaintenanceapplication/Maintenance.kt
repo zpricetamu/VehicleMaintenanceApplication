@@ -50,7 +50,7 @@ class Maintenance : Fragment() {
             val text6 = view.findViewById<TextView>(R.id.solution)
             var imageview3 = view.findViewById<ImageView>(R.id.imageView3)
 
-            var x =0
+            var x =1
             if(x==1) {
                 text1.setText("OBD Code: " + response3.code).toString()
                 text2.setText("Description: "+response3.descrip).toString()

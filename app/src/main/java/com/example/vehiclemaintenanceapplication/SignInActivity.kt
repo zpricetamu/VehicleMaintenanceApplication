@@ -19,7 +19,9 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var binding: SignInActivityBinding
     private lateinit var firebaseAuth: FirebaseAuth
     lateinit var sharedPreferences: SharedPreferences
-
+    object passthrow {
+        var pass: String = ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +37,13 @@ class SignInActivity : AppCompatActivity() {
 //listener
         binding.btnRegister.setOnClickListener {
             val email = binding.emailInput.text.toString()
-            val pass = binding.passwordInput.text.toString()
+            passthrow.pass = binding.passwordInput.text.toString()
 
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
+            if (email.isNotEmpty() && passthrow.pass.isNotEmpty()) {
 //check if email and pass not empty, allow firebase to sign in or else send toast
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                firebaseAuth.signInWithEmailAndPassword(email, passthrow.pass).addOnCompleteListener {
                     if (it.isSuccessful) {
+
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
