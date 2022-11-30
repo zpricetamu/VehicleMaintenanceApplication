@@ -31,14 +31,14 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/micar" />
+            app:srcCompat="@drawable/jetta" />
 
         <TextView
             android:id="@+id/cartype"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
-            android:text="2002 Toyota 4Runner"
+            android:text="2019 Vokswagen Jetta"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
                             android:paddingLeft="15dp"
                             android:paddingTop="20dp"
                             android:paddingBottom="15dp"
-                            android:text="Preventative Maintenance: Available"
+                            android:text="Preventative Maintenance: --"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -107,7 +107,7 @@
                         android:paddingLeft="15dp"
                         android:paddingTop="20dp"
                         android:paddingBottom="15dp"
-                        android:text="Speed: 35.34"
+                        android:text="Speed: --"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
@@ -120,7 +120,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="15dp"
-                        android:text="RPM: 2500.45"
+                        android:text="RPM: --"
                         android:textSize="20dp"
                         android:textStyle="bold"
 
@@ -139,7 +139,7 @@
                             android:paddingLeft="15dp"
                             android:paddingTop="20dp"
                             android:paddingBottom="15dp"
-                            android:text="Oil Temp: 245"
+                            android:text="Oil Temp: --"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -152,7 +152,7 @@
                             android:paddingTop="15dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="15dp"
-                            android:text="Coolant Temp: 435"
+                            android:text="Coolant Temp: --"
                             android:textSize="20dp"
                             android:textStyle="bold"
 
@@ -170,7 +170,7 @@
                             android:paddingLeft="15dp"
                             android:paddingTop="20dp"
                             android:paddingBottom="15dp"
-                            android:text="Fuel Pressure: 31.0"
+                            android:text="Fuel Pressure: --"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -183,7 +183,7 @@
                             android:paddingTop="15dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="15dp"
-                            android:text="Runtime: 111234"
+                            android:text="Runtime: --"
                             android:textSize="20dp"
                             android:textStyle="bold"
 
@@ -201,7 +201,7 @@
                             android:paddingLeft="15dp"
                             android:paddingTop="20dp"
                             android:paddingBottom="15dp"
-                            android:text="Fuel Trim 1(long): 1 "
+                            android:text="Fuel Trim 1(long): -- "
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -214,7 +214,7 @@
                             android:paddingTop="15dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="15dp"
-                            android:text="Fuel Trim 2(long): 0"
+                            android:text="Fuel Trim 2(long): --"
                             android:textSize="20dp"
                             android:textStyle="bold"
 
@@ -232,7 +232,7 @@
                             android:paddingLeft="15dp"
                             android:paddingTop="20dp"
                             android:paddingBottom="15dp"
-                            android:text="Bank 1 Voltage: test"
+                            android:text="Bank 1 Voltage: --"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -245,7 +245,7 @@
                             android:paddingTop="15dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="15dp"
-                            android:text="Bank 2 Voltage: 6.5"
+                            android:text="Bank 2 Voltage: --"
                             android:textSize="20dp"
                             android:textStyle="bold"
 
@@ -263,7 +263,7 @@
                             android:paddingLeft="15dp"
                             android:paddingTop="20dp"
                             android:paddingBottom="15dp"
-                            android:text="Fuel Trim 1(short): 0"
+                            android:text="Fuel Trim 1(short): --"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -276,7 +276,7 @@
                             android:paddingTop="15dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="15dp"
-                            android:text="Fuel Trim 2(short): 1"
+                            android:text="Fuel Trim 2(short): --"
                             android:textSize="20dp"
                             android:textStyle="bold"
 

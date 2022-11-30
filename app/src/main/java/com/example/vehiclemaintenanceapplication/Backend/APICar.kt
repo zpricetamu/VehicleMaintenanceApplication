@@ -12,16 +12,18 @@ interface APICar {
         @Path("password") string: String
     ): CarDataPost
 
-    @GET("sensorvalue/2022-09-28T07:01:40")
-    suspend fun getData(): CarDataGet
+    @GET("sensorvalue/{datetime}")
+    suspend fun getData(
+        @Path("datetime") string: String
+    ): Response<CarDataGet>
 
     @GET("obdcode/P0420")
     suspend fun getObd(): OBDGet
 
-    //added these three lines
-    @POST("uservalue/testpassword")
+    @POST("uservalue")
     suspend fun pushPost(
         @Body post: CarUserPost
     ): Response<CarUserPost>
+
 
 }

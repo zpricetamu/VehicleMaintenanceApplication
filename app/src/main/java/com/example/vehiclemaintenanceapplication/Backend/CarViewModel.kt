@@ -10,10 +10,10 @@ import retrofit2.http.POST
 
 class CarViewModel(private val repository: Repository): ViewModel() {
 
-    val myResponse: MutableLiveData<CarDataPost> = MutableLiveData()
-    val myResponse2: MutableLiveData<CarDataGet> = MutableLiveData()
-    val myResponse3: MutableLiveData<OBDGet> = MutableLiveData()
-    val myResponse4: MutableLiveData<Response<CarUserPost>> = MutableLiveData()
+    var myResponse: MutableLiveData<CarDataPost> = MutableLiveData()
+    var myResponse2: MutableLiveData<Response<CarDataGet>> = MutableLiveData()
+    var myResponse3: MutableLiveData<OBDGet> = MutableLiveData()
+    var myResponse4: MutableLiveData<Response<CarUserPost>> = MutableLiveData()
 
 
     fun getPost(passw: String) {
@@ -23,9 +23,9 @@ class CarViewModel(private val repository: Repository): ViewModel() {
         }
     }
 
-    fun getData() {
+    fun getData(datetime: String) {
         viewModelScope.launch {
-            val response2: CarDataGet = repository.getData()
+            val response2: Response<CarDataGet> = repository.getData(datetime)
             myResponse2.value=response2
         }
 

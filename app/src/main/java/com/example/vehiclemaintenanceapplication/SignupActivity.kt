@@ -1,14 +1,8 @@
 package com.example.vehiclemaintenanceapplication
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.provider.ContactsContract
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vehiclemaintenanceapplication.databinding.SignupActivityBinding
@@ -19,6 +13,9 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var binding:SignupActivityBinding
     private lateinit var firebaseAuth: FirebaseAuth
     lateinit var sharedPreferences: SharedPreferences
+    object eminthrow {
+        var email: String = ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,21 +32,22 @@ class SignupActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btnRegister.setOnClickListener{
-            val email = binding.emailInput.text.toString()
-            val pass = binding.passwordInput.text.toString()
+            eminthrow.email = binding.emailInput.text.toString()
             val conpass = binding.confirmpasswordInput.text.toString()
-
+            SignInActivity.passthrow.pass = binding.passwordInput.text.toString()
 
 
 
 //check if slots empty if not create a new user or send a toast to correct it
-            if(email.isNotEmpty() && pass.isNotEmpty() && conpass.isNotEmpty()){
-                if(pass == (conpass)){
+            if(eminthrow.email.isNotEmpty() && SignInActivity.passthrow.pass.isNotEmpty() && conpass.isNotEmpty()){
+                if(SignInActivity.passthrow.pass == (conpass)){
 
-                    firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener{
+                    firebaseAuth.createUserWithEmailAndPassword(eminthrow.email, SignInActivity.passthrow.pass).addOnCompleteListener{
                         if(it.isSuccessful){
+
                             val intent = Intent(this, CarSelect::class.java)
                             startActivity(intent)
+                            finish()
 
                         }else{
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
@@ -63,4 +61,5 @@ class SignupActivity : AppCompatActivity() {
             }
         }
     }
+
 }
