@@ -24,5 +24,5 @@ class Repository {
     suspend fun getFlag(datetime: String): Response<Flagget> {
         return RetrofitInstance.api.getFlag(datetime)
     }
-
+//repository data for all, controls how getxxx works for each
 }

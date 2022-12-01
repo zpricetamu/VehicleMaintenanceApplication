@@ -1,7 +1,7 @@
 package com.example.vehiclemaintenanceapplication.Backend
 
 import com.google.gson.annotations.SerializedName
-
+//car user data to pull from server
 data class CarDataPost (
     @SerializedName("name") val name : String?,
     @SerializedName("user_email") val user_email : String?,

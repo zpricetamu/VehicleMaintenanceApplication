@@ -22,6 +22,11 @@ class CarSelect : AppCompatActivity()  {
     private lateinit var binding: CarSelectBinding
     private lateinit var viewModel: CarViewModel
     private lateinit var spin1: String
+    object car{
+        var make=""
+        var model=""
+    }
+//bind car select screen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //view binding for carselect
@@ -30,39 +35,12 @@ class CarSelect : AppCompatActivity()  {
 //car make array
 
 
-        val arrayList_make= arrayListOf<String>("Please the make of your vehicle", "Toyota", "Volkswagen", "Ford", "Honda")
-        val arrayAdapter_make=ArrayAdapter(applicationContext,R.layout.carmake,arrayList_make)
-
-
-//model arrays for car
-        val arraymodelstoyota = arrayListOf<String>("Please select model of vehicle", "Camry", "Corolla", "Highlander", "RAV4", "Tacoma")
-        val arraymodelsvolk = arrayListOf<String>("Please select model of vehicle", "Beetle", "Jetta", "Tiguan")
-        val arraymodelsford = arrayListOf<String>("Please select model of vehicle", "Explorer", "F-150", "Fiesta", "Focus", "Mustang")
-        val arraymodelshonda = arrayListOf<String>("Please select model of vehicle", "Accord", "Civic", "CR-V", "Odyssey", "Pilot")
-        val aamodel=ArrayAdapter(applicationContext,R.layout.carmodel,arraymodelstoyota)
-        //sent spinner 2 = to aamodel
-
-
-
-
-
-//assign aamodel depen
-
-
-
-
-
-
-
-
-
-
 //listener on button to send to mainactivity
         binding.button.setOnClickListener(){
             signup()
 
 
-
+//controls where button will send
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -70,7 +48,7 @@ class CarSelect : AppCompatActivity()  {
         }
 
     }
-
+//function to get signup info from user and post to server
     private fun signup() {
         var name = ""
         val checker = findViewById<TextView>(R.id.name_input)
@@ -82,22 +60,22 @@ class CarSelect : AppCompatActivity()  {
         if(checkyear.text.isNotEmpty()){
            year = checkyear.text.toString()
         }
-        var make = "Ford"
+         car.make = "Ford"
         val checkmake = findViewById<TextView>(R.id.makecar_input)
         if(checkmake.text.isNotEmpty()){
-            make=checkmake.text.toString()
+            car.make=checkmake.text.toString()
         }
-        var model = "Explorer"
+         car.model = "Explorer"
         val checkmodel = findViewById<TextView>(R.id.modelcar_input)
         if(checkmodel.text.isNotEmpty()){
-            model=checkmodel.text.toString()
+            car.model=checkmodel.text.toString()
         }
 
 
         val repository = Repository()
         val viewModelFactory = CarViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
-        val myPost = CarUserPost("$name", "${SignupActivity.eminthrow.email}", "${SignInActivity.passthrow.pass}", "$make", "$model", "$year")
+        val myPost = CarUserPost("$name", "${SignupActivity.eminthrow.email}", "${SignInActivity.passthrow.pass}", "${car.make}", "${car.model}", "$year")
         viewModel.pushPost(myPost)
         viewModel.myResponse4.observe(this, Observer { response4 ->
             if (response4.isSuccessful) {

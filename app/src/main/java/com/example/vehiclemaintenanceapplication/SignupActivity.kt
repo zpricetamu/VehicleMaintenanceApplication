@@ -38,7 +38,7 @@ class SignupActivity : AppCompatActivity() {
 
 
 
-//check if slots empty if not create a new user or send a toast to correct it
+//check if email, pass and conpass aren't empty, if they are it won't work
             if(eminthrow.email.isNotEmpty() && SignInActivity.passthrow.pass.isNotEmpty() && conpass.isNotEmpty()){
                 if(SignInActivity.passthrow.pass == (conpass)){
 

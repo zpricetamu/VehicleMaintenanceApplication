@@ -15,6 +15,7 @@ class CarViewModel(private val repository: Repository): ViewModel() {
     var myResponse3: MutableLiveData<Response<OBDGet>> = MutableLiveData()
     var myResponse4: MutableLiveData<Response<CarUserPost>> = MutableLiveData()
     var myResponse5: MutableLiveData<Response<Flagget>> = MutableLiveData()
+        // m
 
 
     fun getPost(passw: String) {

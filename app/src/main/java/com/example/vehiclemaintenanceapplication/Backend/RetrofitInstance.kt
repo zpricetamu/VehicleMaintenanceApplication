@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
+    //merger for requests, builds the base for all of them
     private val retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)

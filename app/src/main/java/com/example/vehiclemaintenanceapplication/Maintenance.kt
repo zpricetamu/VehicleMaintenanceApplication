@@ -35,14 +35,14 @@ class Maintenance : Fragment() {
             container, false)
 
 
-
+//basic setup for get request
         val repository = Repository()
         val viewModelFactory = CarViewModelFactory(repository)
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
         viewModel.getObd(MainActivity.faultcode.faultcode)
         viewModel.myResponse3.observe(viewLifecycleOwner, Observer { response3 ->
-
+//assign names to text boxes
             val text1 = view.findViewById<TextView>(R.id.obdcode)
             val text2 = view.findViewById<TextView>(R.id.maintenancetipuno)
             val text3 = view.findViewById<TextView>(R.id.problems1)
@@ -50,7 +50,7 @@ class Maintenance : Fragment() {
             val text5 = view.findViewById<TextView>(R.id.problems)
             val text6 = view.findViewById<TextView>(R.id.solution)
             var imageview3 = view.findViewById<ImageView>(R.id.imageView3)
-
+//switches screens based on inputs
             Log.d("Main", "${MainActivity.faultcode.faultcode}")
             if(response3.isSuccessful && MainActivity.count.count==1) {
                 text1.setText("OBD Code: " + response3.body()?.code).toString()

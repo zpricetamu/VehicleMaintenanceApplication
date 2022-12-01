@@ -6,7 +6,7 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface APICar {
-
+//api interface for all get and post request
     @GET("uservalue/{password}")
     suspend fun getPost(
         @Path("password") string: String

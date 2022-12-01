@@ -51,17 +51,21 @@ class MainActivity : AppCompatActivity() {
     object faultcode {
         var faultcode = ""
     }
+    //current time object
     object cur{
     var current = ""
 }
+    //counter object
     object count{
         var count=0
     }
+    //ints used to control flags/alerts
     object flag{
         var xvalue=0
         var yvalue=0
         var zvalue=0
     }
+    //loop to repeat every second
     private val updateText = object : Runnable {
         override fun run() {
             update()
@@ -100,13 +104,13 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
-
+        //setup for get repository
         val repository = Repository()
         val viewModelFactory = CarViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
 
 
-
+        //loop
         mainHandle = Handler(Looper.getMainLooper())
 
 
@@ -137,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.getPost(SignInActivity.passthrow.pass)
         viewModel.myResponse.observe(this, Observer { response ->
 
-
+//assign get values to strings
             val text1 = findViewById<TextView>(R.id.user_name)
             text1.setText(response.name).toString()
             val text2 = findViewById<TextView>(R.id.emin)
@@ -147,7 +151,7 @@ class MainActivity : AppCompatActivity() {
 
 
         })
-
+//repeats every second to refresh values
          cur.current = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS).toString()
         Log.d("Main", "${cur.current}")
         viewModel.getData(cur.current)
@@ -179,7 +183,7 @@ class MainActivity : AppCompatActivity() {
                 text13.setText("Fuel Trim 1(short): " + response2.body()?.shortfueltrim1)
                 val text14 = findViewById<TextView>(R.id.sftrim2)
                 text14.setText("Fuel Trim 2(short): " + response2.body()?.shortfueltrim2)
-                if(response2.body()?.obd_fault_code.isNullOrBlank()) {
+                if(response2.body()?.obd_fault_code.equals("[]")) {
                     count.count = 0
                     val text15 = findViewById<TextView>(R.id.status)
                     text15.setText("Status: Normal")
@@ -192,6 +196,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
         val obddc="disc"
         val micdc="conne"
         val imudc="cted"
@@ -211,6 +216,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
+
+
                 if(flag.xvalue==0){
                     flag.yvalue==0
                 }
@@ -224,22 +231,24 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
+//function to control an alert to go out if conditions met
     private fun alert() {
         flag.yvalue=1
         Alerter.create(this)
             .setTitle("Predictive Maintenance")
             .setText("There are possible maintenance issues that could require your attention")
             .addButton("Go to", R.style.AlertButton, View.OnClickListener {
-                startActivity(Intent(this, Alerts::class.java))
+
                 finish()
             })
             .addButton("Later", R.style.AlertButton, View.OnClickListener {
 
             })
             .show()
-    }
 
+
+    }
+//part of handler to control pause and resume
     override fun onPause() {
         super.onPause()
         mainHandle.removeCallbacks(updateText)
@@ -257,7 +266,7 @@ class MainActivity : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
-
+//logout function
     fun logout(){
         val intent = Intent(this, SignInActivity::class.java)
         startActivity(intent)

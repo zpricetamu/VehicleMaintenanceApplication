@@ -2,7 +2,7 @@ package com.example.vehiclemaintenanceapplication.Backend
 
 import com.google.gson.annotations.SerializedName
 
-
+//get obd fault stuff
 data class OBDGet (
     @SerializedName("code") val code : String?,
     @SerializedName("description") val descrip : String?,
