@@ -9,6 +9,7 @@ import android.os.Looper
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -77,7 +78,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val repository = Repository()
+        val viewModelFactory = CarViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
 //setup for navigation bar, drawer layout allows for navigation to be pulled from side of screen
         drawerLayout = findViewById(R.id.drawerLayout)
         val navView : NavigationView = findViewById(R.id.nav_view)
@@ -104,10 +107,39 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+        viewModel.getPost(SignInActivity.passthrow.pass)
+        viewModel.myResponse.observe(this, Observer { response ->
+            var carmodel = response.user_vehicle_model
+
         //setup for get repository
-        val repository = Repository()
-        val viewModelFactory = CarViewModelFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
+        if( carmodel.equals("Accord", ignoreCase = true)){
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.accord)
+        }else if(carmodel.equals("F-150", ignoreCase = true)){
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.f150)
+        }else if(carmodel.equals("Camry", ignoreCase = true)){
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.camry)
+        }else if(carmodel.equals("Corolla", ignoreCase = true)){
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.corolla)
+        }else if(carmodel.equals("Mustang", ignoreCase = true)){
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.mustang)
+        }else if(carmodel.equals("Explorer", ignoreCase = true)){
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.explorer)
+        }else if(carmodel.equals("Civic", ignoreCase = true)){
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.civic)
+        }else{
+            var imageview = findViewById<ImageView>(R.id.imageView)
+            imageview.setBackgroundResource(R.drawable.infnoting)
+        }
+        })
+
+
 
 
         //loop
@@ -197,9 +229,9 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        val obddc="disc"
-        val micdc="conne"
-        val imudc="cted"
+        val obddc="OBD sensor disconnected"
+        val micdc="Mic sensor disconnected"
+        val imudc="IMU sensor disconnected"
         viewModel.getFlag(cur.current)
         viewModel.myResponse5.observe(this, Observer { response5 ->
             if(response5.isSuccessful){
@@ -216,19 +248,10 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-
-
-                if(flag.xvalue==0){
-                    flag.yvalue==0
-                }
-            flag.xvalue = response5.body()?.flag_value!!
-
-            if(flag.xvalue==1 && flag.yvalue==0) {
-                flag.yvalue == 1
                 text20.setText("Preventative Maintenance: Available")
                 alert()
             }
-            }
+
         })
     }
 //function to control an alert to go out if conditions met
