@@ -27,7 +27,7 @@
         android:title="Maintenance"/>
 
     <item
-        android:id="@+id/alerts"
+        android:id="@+id/nav_flag"
         android:icon="@drawable/ic_action_alert"
         android:title="Alerts"
         />

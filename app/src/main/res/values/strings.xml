@@ -53,4 +53,142 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
     <string name="test">url</string>
+
+
+    <string-array name="Make">
+        <item>Toyota</item>
+        <item>Volkswagen</item>
+        <item>Ford</item>
+        <item>Honda</item>
+        <item>GMC</item>
+        <item>BMW</item>
+        <item>Hyundai</item>
+        <item>Nissan</item>
+        <item>Kia</item>
+        <item>Volvo</item>
+        <item>Suzuki</item>
+        <item>Mazda</item>
+        <item>Subaru</item>
+        <item>Chrysler</item>
+        <item>Chevrolet</item>
+        <item>Mercedes</item>
+    </string-array>
+
+    <string-array name="MakeToyota">
+        <item>Avalon</item>
+        <item>Camry</item>
+        <item>Corolla</item>
+        <item>Prius</item>
+        <item>Yaris</item>
+        <item>86</item>
+        <item>Sienna</item>
+        <item>C-HR</item>
+        <item>RAV4</item>
+        <item>Highlander</item>
+        <item>4Runner</item>
+        <item>Tacoma</item>
+        <item>Tundra</item>
+
+    </string-array>
+
+    <string-array name="MakeVolkswagen">
+
+        <item>Beetle</item>
+        <item>Golf</item>
+        <item>Touran</item>
+        <item>Passat</item>
+        <item>Jetta</item>
+        <item>Tiguan</item>
+        <item>Touareg</item>
+        <item>Atlas</item>
+        <item>Polo GTI</item>
+        <item>Caddy</item>
+        <item>Eos</item>
+        <item>Transporter</item>
+        <item>CC</item>
+        <item>Sharan</item>
+        <item>Scirocco</item>
+        <item>Lavida</item>
+        <item>Up</item>
+        <item>Santana</item>
+        <item>Corrado</item>
+        <item>Derby</item>
+        <item>Polo</item>
+    </string-array>
+
+    <string-array name="MakeFord">
+        <item>Everest</item>
+        <item>Escape</item>
+        <item>Ranger</item>
+        <item>Wildtrak</item>
+        <item>Expedition</item>
+        <item>Fiesta</item>
+        <item>Focus Wagon</item>
+        <item>F-150</item>
+        <item>Mustang</item>
+        <item>Explorer</item>
+        <item>Galaxy</item>
+        <item>Kuga</item>
+        <item>GT</item>
+        <item>Fusion</item>
+        <item>Tourneo</item>
+        <item>Maverick</item>
+        <item>Edge</item>
+        <item>Puma</item>
+
+    </string-array>
+
+    <string-array name="MakeHonda">
+        <item>HR-V</item>
+        <item>CR-V</item>
+        <item>Pilot</item>
+        <item>Passport</item>
+        <item>Civic</item>
+        <item>Accord</item>
+        <item>Odyssey</item>
+        <item>Ridgeline</item>
+        <item>Odyssey</item>
+
+    </string-array>
+
+    <string-array name="MakeGMC">
+        <item>Sierra</item>
+        <item>Terrain</item>
+        <item>Yukon</item>
+        <item>Acadia</item>
+        <item>Savana</item>
+        <item>Canyon</item>
+        <item>Hummer</item>
+
+    </string-array>
+
+    <string-array name="MakeBMW">
+        <item>X1</item>
+        <item>M8</item>
+        <item>8 Series</item>
+        <item>3 Series</item>
+        <item>X7</item>
+        <item>X4</item>
+        <item>X3</item>
+        <item>2 Series</item>
+        <item>4 Series</item>
+        <item>5 Series</item>
+        <item>M4</item>
+        <item>M5</item>
+
+    </string-array>
+
+    <string-array name="MakeHyundai">
+        <item>Accent</item>
+        <item>Elantra</item>
+        <item>Kona</item>
+        <item>Santa Cruz</item>
+        <item>Santa Fe</item>
+        <item>Tucson</item>
+        <item>Sonata</item>
+        <item>Veloster</item>
+
+    </string-array>
+
+
 </resources>

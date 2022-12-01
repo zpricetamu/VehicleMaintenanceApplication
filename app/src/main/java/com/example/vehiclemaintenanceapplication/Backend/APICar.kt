@@ -17,13 +17,19 @@ interface APICar {
         @Path("datetime") string: String
     ): Response<CarDataGet>
 
-    @GET("obdcode/P0420")
-    suspend fun getObd(): OBDGet
+    @GET("obdcode/{faultcode}")
+    suspend fun getObd(
+        @Path("faultcode") string: String
+    ): Response<OBDGet>
 
     @POST("uservalue")
     suspend fun pushPost(
         @Body post: CarUserPost
     ): Response<CarUserPost>
 
+    @GET("flag/{datetime}")
+    suspend fun getFlag(
+        @Path("datetime") string: String
+    ): Response<Flagget>
 
 }

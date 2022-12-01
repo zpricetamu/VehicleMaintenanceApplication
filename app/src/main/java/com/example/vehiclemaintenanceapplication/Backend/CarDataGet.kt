@@ -16,6 +16,7 @@ data class CarDataGet (
     @SerializedName("engine_oil_temperature") val oilTemp : Int?,
     @SerializedName("o2_bank_1_voltage") val o2bank1 : Double?,
     @SerializedName("o2_bank_2_voltage") val o2bank2 : Double?,
+    @SerializedName("obd_fault_code") val obd_fault_code : String?,
 
 
 

@@ -2,6 +2,7 @@ package com.example.vehiclemaintenanceapplication
 
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Im
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.vehiclemaintenanceapplication.Backend.CarViewModel
 import com.example.vehiclemaintenanceapplication.Backend.CarViewModelFactory
 import com.example.vehiclemaintenanceapplication.Backend.Repository.Repository
-
-
+import com.example.vehiclemaintenanceapplication.WeatherCode.POJO.Main
 
 
 class Maintenance : Fragment() {
@@ -38,8 +38,9 @@ class Maintenance : Fragment() {
 
         val repository = Repository()
         val viewModelFactory = CarViewModelFactory(repository)
+
         viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
-        viewModel.getObd()
+        viewModel.getObd(MainActivity.faultcode.faultcode)
         viewModel.myResponse3.observe(viewLifecycleOwner, Observer { response3 ->
 
             val text1 = view.findViewById<TextView>(R.id.obdcode)
@@ -50,13 +51,15 @@ class Maintenance : Fragment() {
             val text6 = view.findViewById<TextView>(R.id.solution)
             var imageview3 = view.findViewById<ImageView>(R.id.imageView3)
 
-            var x =1
-            if(x==1) {
-                text1.setText("OBD Code: " + response3.code).toString()
-                text2.setText("Description: "+response3.descrip).toString()
-                text3.setText("Description: "+response3.issues).toString()
-                text4.setText("Description: "+response3.solution).toString()
-            }else{
+            Log.d("Main", "${MainActivity.faultcode.faultcode}")
+            if(response3.isSuccessful && MainActivity.count.count==1) {
+                text1.setText("OBD Code: " + response3.body()?.code).toString()
+                text2.setText("Description: "+response3.body()?.descrip).toString()
+                text3.setText("Description: "+response3.body()?.issues).toString()
+                text4.setText("Description: "+response3.body()?.solution).toString()
+
+
+            }else {
                 text1.setText("NO ISSUES DETECTED").toString()
                 text2.setText("").toString()
                 text3.setText("").toString()

@@ -14,11 +14,15 @@ class Repository {
     suspend fun getData(datetime: String): Response<CarDataGet> {
         return RetrofitInstance.api.getData(datetime)
     }
-    suspend fun getObd(): OBDGet {
-        return RetrofitInstance.api.getObd()
+    suspend fun getObd(faultcode: String): Response<OBDGet> {
+        return RetrofitInstance.api.getObd(faultcode)
     }
     suspend fun pushPost(post: CarUserPost): Response<CarUserPost> {
         return RetrofitInstance.api.pushPost(post)
+    }
+
+    suspend fun getFlag(datetime: String): Response<Flagget> {
+        return RetrofitInstance.api.getFlag(datetime)
     }
 
 }

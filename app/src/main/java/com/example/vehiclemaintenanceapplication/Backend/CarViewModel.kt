@@ -12,8 +12,9 @@ class CarViewModel(private val repository: Repository): ViewModel() {
 
     var myResponse: MutableLiveData<CarDataPost> = MutableLiveData()
     var myResponse2: MutableLiveData<Response<CarDataGet>> = MutableLiveData()
-    var myResponse3: MutableLiveData<OBDGet> = MutableLiveData()
+    var myResponse3: MutableLiveData<Response<OBDGet>> = MutableLiveData()
     var myResponse4: MutableLiveData<Response<CarUserPost>> = MutableLiveData()
+    var myResponse5: MutableLiveData<Response<Flagget>> = MutableLiveData()
 
 
     fun getPost(passw: String) {
@@ -31,9 +32,9 @@ class CarViewModel(private val repository: Repository): ViewModel() {
 
     }
 
-    fun getObd() {
+    fun getObd(faultcode: String) {
         viewModelScope.launch {
-            val response3: OBDGet = repository.getObd()
+            val response3: Response<OBDGet> = repository.getObd(faultcode)
             myResponse3.value=response3
 
         }
@@ -46,5 +47,11 @@ class CarViewModel(private val repository: Repository): ViewModel() {
         }
     }
 
+    fun getFlag(datetime: String) {
+        viewModelScope.launch {
+            val response5: Response<Flagget> = repository.getFlag(datetime)
+            myResponse5.value=response5
+        }
+    }
 
 }

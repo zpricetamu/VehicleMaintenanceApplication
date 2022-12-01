@@ -32,7 +32,7 @@ class CarSelect : AppCompatActivity()  {
 
         val arrayList_make= arrayListOf<String>("Please the make of your vehicle", "Toyota", "Volkswagen", "Ford", "Honda")
         val arrayAdapter_make=ArrayAdapter(applicationContext,R.layout.carmake,arrayList_make)
-        binding.spinner.adapter = arrayAdapter_make
+
 
 //model arrays for car
         val arraymodelstoyota = arrayListOf<String>("Please select model of vehicle", "Camry", "Corolla", "Highlander", "RAV4", "Tacoma")
@@ -41,50 +41,18 @@ class CarSelect : AppCompatActivity()  {
         val arraymodelshonda = arrayListOf<String>("Please select model of vehicle", "Accord", "Civic", "CR-V", "Odyssey", "Pilot")
         val aamodel=ArrayAdapter(applicationContext,R.layout.carmodel,arraymodelstoyota)
         //sent spinner 2 = to aamodel
-        binding.spinner2.adapter=aamodel
 
 
 
 
-//assign aamodel depending on which make
 
-
-        binding.spinner.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                if(p2==1){
-                    spin1 = p0?.getItemAtPosition(p2).toString()
-                    val aamodel=ArrayAdapter(applicationContext,R.layout.carmodel,arraymodelstoyota)
-
-                    binding.spinner2.adapter=aamodel
-
-                }
-                if(p2==2){
-                    spin1 = p0?.getItemAtPosition(p2).toString()
-                    val aamodel=ArrayAdapter(applicationContext,R.layout.carmodel,arraymodelsvolk)
-
-                    binding.spinner2.adapter=aamodel
-                }
-                if(p2==3){
-                    spin1 = p0?.getItemAtPosition(p2).toString()
-                    val aamodel=ArrayAdapter(applicationContext,R.layout.carmodel,arraymodelsford)
-
-                    binding.spinner2.adapter=aamodel
-                }
-                if(p2==4){
-                    spin1 = p0?.getItemAtPosition(p2).toString()
-                    val aamodel=ArrayAdapter(applicationContext,R.layout.carmodel,arraymodelshonda)
-
-                    binding.spinner2.adapter=aamodel
-                }
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
+//assign aamodel depen
 
 
 
-        }
+
+
+
 
 
 
@@ -104,33 +72,42 @@ class CarSelect : AppCompatActivity()  {
     }
 
     private fun signup() {
-        var name = "New User"
+        var name = ""
         val checker = findViewById<TextView>(R.id.name_input)
         if(checker.text.isNotEmpty()){
-            name = checker.toString()
+           name = checker.text.toString()
         }
         var year = ""
         val checkyear = findViewById<TextView>(R.id.year_input)
         if(checkyear.text.isNotEmpty()){
-            year = checkyear.toString()
+           year = checkyear.text.toString()
+        }
+        var make = "Ford"
+        val checkmake = findViewById<TextView>(R.id.makecar_input)
+        if(checkmake.text.isNotEmpty()){
+            make=checkmake.text.toString()
+        }
+        var model = "Explorer"
+        val checkmodel = findViewById<TextView>(R.id.modelcar_input)
+        if(checkmodel.text.isNotEmpty()){
+            model=checkmodel.text.toString()
         }
 
 
+        val repository = Repository()
+        val viewModelFactory = CarViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
+        val myPost = CarUserPost("$name", "${SignupActivity.eminthrow.email}", "${SignInActivity.passthrow.pass}", "$make", "$model", "$year")
+        viewModel.pushPost(myPost)
+        viewModel.myResponse4.observe(this, Observer { response4 ->
+            if (response4.isSuccessful) {
+                Log.d("Main", response4.body().toString())
+                Log.d("Main", response4.code().toString())
+                Log.d("Main", response4.message())
+            }
 
-            val repository = Repository()
-            val viewModelFactory = CarViewModelFactory(repository)
-            viewModel = ViewModelProvider(this, viewModelFactory).get(CarViewModel::class.java)
-            val myPost = CarUserPost("$name", "${SignupActivity.eminthrow.toString()}", "${SignInActivity.passthrow.toString()}", "$spin1", "working on this", "$year")
-            viewModel.pushPost(myPost)
-            viewModel.myResponse4.observe(this, Observer { response4 ->
-                if (response4.isSuccessful) {
-                    Log.d("Main", response4.body().toString())
-                    Log.d("Main", response4.code().toString())
-                    Log.d("Main", response4.message())
-                }
 
-
-            })
+        })
 
 
     }
